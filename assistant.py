@@ -1,4 +1,4 @@
-import audio, S2TT, T2ST, gpt_4, urllib.request, webbrowser
+import audio, S2TT, T2ST, gpt_4, urllib.request, webbrowser, requests, web
 
 class assistant:
     def __init__(self) -> None:
@@ -21,10 +21,14 @@ class assistant:
 
     def translate_text_to_speech(self):
         result = T2ST.run_inference(self.response)
-
-        print(result[0])
-
         url = 'file://' + result[0]
+        print(result[0])
+        #web.savefile_chrome(url)
+
+        # #r = requests.get(url, allow_redirects=True)
+        # r = webbrowser.open(url)
+        # open('response.wav', 'wb').write(r.content)
+        # url = 'file://' + result[0]
         webbrowser.open(url)
 
     def add_log_transcript(self, dialogue, speaker, file_path="log.txt"):
