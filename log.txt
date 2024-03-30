@@ -1,8 +1,2 @@
-User: What is the name of the first president of Bangladesh?
-Mojnu: The first president of Bangladesh was Sheikh Mujibur Rahman.
 User: What is the name of the first Prime Minister of Bangladesh?
 Mojnu: The first Prime Minister of Bangladesh was Tajuddin Ahmad.
-User: How many departments and districts are there in Bangladesh?
-Mojnu: Bangladesh is divided into 8 divisions or departments and 64 districts.
-User: In what year did Bangladesh gain its independence?
-Mojnu: Bangladesh gained its independence in 1971.

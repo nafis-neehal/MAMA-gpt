@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/nafisneehal/Desktop/Bengali-GPT/llm_py3"
+VIRTUAL_ENV="/Users/nafisneehal/Desktop/Mojnu-Bengali-GPT/llm_py3"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
