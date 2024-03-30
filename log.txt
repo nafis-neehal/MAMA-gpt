@@ -1,4 +1,0 @@
-User: Who was the first Prime Minister of Bangladesh?
-Mojnu: The first Prime Minister of Bangladesh was Tajuddin Ahmad. He served from April 1971 to January 1972.
-User: What city is the capital of Bangladesh?
-Mojnu: The capital city of Bangladesh is Dhaka.

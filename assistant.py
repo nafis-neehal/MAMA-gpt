@@ -1,9 +1,10 @@
-import audio, S2TT, T2ST, gpt_4, urllib.request, webbrowser, requests, web
+import audio, S2TT, T2ST, gpt_4, urllib.request, webbrowser, requests, web, get_api
 
 class assistant:
     def __init__(self) -> None:
         self.query = ''
         self.response = ''
+        self.api_endpoint = get_api.get_endpoint()
 
     def record(self, file_path="sample.wav", sample_rate=44100):
         audio.record_audio(file_path, sample_rate)
@@ -11,7 +12,7 @@ class assistant:
     def translate_speech_to_text(self, file_path):
         print("Translating the recorded audio to text...")
         print("Transmitting to SeamlessM4T API")
-        result = S2TT.run_inference(file_path)
+        result = S2TT.run_inference(file_path, self.api_endpoint)
         self.query = result 
 
     def get_gpt_4_response(self):
@@ -20,7 +21,7 @@ class assistant:
         self.response = response
 
     def translate_text_to_speech(self):
-        result = T2ST.run_inference(self.response)
+        result = T2ST.run_inference(self.response, self.api_endpoint)
         url = 'file://' + result[0]
         print(result[0])
         #web.savefile_chrome(url)
