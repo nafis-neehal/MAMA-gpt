@@ -23,7 +23,7 @@ class assistant:
     def translate_text_to_speech(self):
         result = T2ST.run_inference(self.response, self.api_endpoint)
         url = 'file://' + result[0]
-        print(result[0])
+        # print(result[0])
         #web.savefile_chrome(url)
 
         # #r = requests.get(url, allow_redirects=True)

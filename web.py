@@ -46,33 +46,32 @@ def savefile_chrome(url):
     # Quit the driver
     driver.quit()
 
-
-
-def savefile(url):
+#url2 = "https://file-examples.com/wp-content/storage/2017/11/file_example_WAV_1MG.wav"
+def savefile_firefox(url):
 
     # Specify your download directory here
-    download_dir = "/Users/nafisneehal/Desktop/Mojnu-Bengali-GPT/"  # Change this to your desired path
+    #download_dir = "/Users/nafisneehal/Desktop/Mojnu-Bengali-GPT/"  # Change this to your desired path
+    download_dir = "./"
 
     # Set additional options for the WebDriver
     options = Options()
 
-    # Set up the Firefox profile with your desired settings
-    options.set_preference("browser.download.folderList", 2)  # Use custom download location
-    options.set_preference("browser.download.manager.showWhenStarting", False)
-    options.set_preference("browser.download.dir", download_dir)
-    options.set_preference("browser.helperApps.neverAsk.saveToDisk", "audio/wav, audio/x-wav")
+    # # Set up the Firefox profile with your desired settings
+    # options.set_preference("browser.download.folderList", 2)  # Use custom download location
+    # options.set_preference("browser.download.manager.showWhenStarting", False)
+    # options.set_preference("browser.download.dir", download_dir)
+    # options.set_preference("browser.helperApps.neverAsk.saveToDisk", "audio/wav, audio/x-wav")
 
-    # # Set Firefox preferences to automate file downloads
-    # profile = webdriver.FirefoxProfile()
-    # profile.set_preference("browser.download.folderList", 2)  # 0: desktop, 1: downloads, 2: custom location
-    # profile.set_preference("browser.download.manager.showWhenStarting", False)  # Don't show download manager when starting a download
-    # profile.set_preference("browser.download.dir", download_dir)  # Set the custom download directory
-    # profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "audio/wav")  # MIME type
-    # # Add more MIME types as needed, e.g., "application/pdf, application/x-rar-compressed, application/octet-stream"
+    # Set Firefox preferences to automate file downloads
+    profile = webdriver.FirefoxProfile()
+    profile.set_preference("browser.download.folderList", 2)  # 0: desktop, 1: downloads, 2: custom location
+    profile.set_preference("browser.download.manager.showWhenStarting", False)  # Don't show download manager when starting a download
+    profile.set_preference("browser.download.dir", download_dir)  # Set the custom download directory
+    profile.set_preference("browser.helperApps.neverAsk.saveToDisk", "audio/wav")  # MIME type
+    # Add more MIME types as needed, e.g., "application/pdf, application/x-rar-compressed, application/octet-stream"
 
-  
     # Initialize the WebDriver with the specified options
-    driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), options=options)
+    driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()), firefox_profile = profile)
     #driver = webdriver.Firefox()
 
     # Navigate to the webpage with the file to download
@@ -86,3 +85,19 @@ def savefile(url):
 
     # Quit the driver
     driver.quit()
+
+
+# url2 = "https://file-examples.com/wp-content/storage/2017/11/file_example_WAV_1MG.wav"
+# def try_firefox(url):
+#     fp = webdriver.FirefoxProfile()
+#     fp.set_preference("browser.download.folderList", 2)
+#     fp.set_preference("browser.download.manager.showWhenStarting", True)
+#     fp.set_preference("browser.download.dir", "/Users/nafisneehal/Desktop/Mojnu-Bengali-GPT/")
+#     fp.set_preference("browser.helperApps.neverAsk.saveToDisk", "audio/wav")
+#     driver = webdriver.Firefox(firefox_profile=fp)
+#     driver.implicitly_wait(10)
+#     driver.get(url)
+#     driver.quit()
+
+#try_firefox(url2)
+#savefile_firefox(url2)

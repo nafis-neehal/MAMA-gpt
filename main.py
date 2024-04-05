@@ -69,7 +69,10 @@ def main():
     with open(log_file_path, "w") as file:
         pass 
 
-    counter = int(sys.argv[1]) if sys.argv[1] else 3
+    if sys.argv[1]:
+        counter = int(sys.argv[1]) 
+    else: 
+        counter = 1
 
     try:
         while counter:
