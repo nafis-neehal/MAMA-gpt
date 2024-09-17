@@ -1,2 +1,2 @@
-# Mojnu-Bengali-GPT
+# MAMA-gpt
  
