@@ -1,4 +1,6 @@
-#!/Users/nafisneehal/Desktop/Mojnu-Bengali-GPT/llm_py3/bin/python3
+#!/bin/sh
+'''exec' "/Users/nafisneehal/Desktop/Ongoing Projects/Mojnu-Bengali-GPT/llm_py3/bin/python3" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys
